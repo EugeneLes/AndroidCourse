@@ -81,6 +81,7 @@ public class HW4View extends View {
         int radius = side/2-5;
         cx = side/2;
         cy = side/2;
+        clockPaint.setStrokeWidth(strokeWidth);
         canvas.drawCircle(cx,cy,radius, clockPaint);
         canvas.drawCircle(cx,cy,radius/20, clockPaint);
 
@@ -106,20 +107,30 @@ public class HW4View extends View {
         canvas.drawText("3",side-side10prc,cy+side2_5prc,textPaint);
         canvas.drawText("6",cx-side2_5prc,side-side5prc,textPaint);
         canvas.drawText("9",side5prc,cy+side2_5prc,textPaint);
+
         Calendar cal = Calendar.getInstance();
-        
+        long sec = cal.get(cal.SECOND);
+        long min = cal.get(cal.MINUTE);
+        long hours = cal.get(cal.HOUR_OF_DAY);
 
+        clockPaint.setStrokeWidth(50);//hours
+        float degree = hours*30+(float)(min*0.5);
+        canvas.rotate(degree,cx,cy);
+        canvas.drawLine(cx,cy+side10prc,cx,side10prc+side10prc+side5prc,clockPaint);
+        canvas.rotate(-degree,cx,cy);
+
+        clockPaint.setStrokeWidth(30);//mins
+        degree = min*6;
+        canvas.rotate(degree,cx,cy);
+        canvas.drawLine(cx,cy+side5prc,cx,side10prc+side5prc,clockPaint);
+        canvas.rotate(-degree,cx,cy);
+
+        clockPaint.setStrokeWidth(10);//secs
+        degree = sec*6;
+        canvas.rotate(degree,cx,cy);
         canvas.drawLine(cx,cy+side10prc,cx,side10prc,clockPaint);
+        canvas.rotate(-degree,cx,cy);
+        clockPaint.setStrokeWidth(strokeWidth);
 
-
-//        acrRectF.left = 0;
-//        acrRectF.top = 0;
-//        acrRectF.right = getWidth();
-//        acrRectF.bottom = getHeight();
-//        clockPaint.setStyle(Paint.Style.FILL);
-//        canvas.drawArc(acrRectF,0,90,true,clockPaint);
-//
-//        canvas.drawRect(500,50,100,100,clockPaint); //need to use separate Paint for changing style
-//        //canvas.rotate(30,midX,midY); //for homework1
     }
 }
