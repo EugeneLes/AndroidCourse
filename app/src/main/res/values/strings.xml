@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">AndroidCourse</string>
+    <string name="HW1_ChangeBtnName">- Change -</string>
+    <string name="HW1_textView1_name">TextView1</string>
+    <string name="HW1_textView2_name">TextView2</string>
+    <string name="buttonCW1_name">ClassWork1</string>
+    <string name="buttonHW1_name">HomeWork1</string>
+    <string name="buttonCW4_name">ClassWork4</string>
+    <string name="buttonHW4_name">HomeWork4</string>
+    <string name="buttonCW5_name">ClassWork5</string>
+    <string name="buttonHW5_name">HomeWork5</string>
+    <string name="buttonCW6_name">ClassWork6</string>
+    <string name="buttonHW6_name">HomeWork6</string>
+    <string name="title_activity_home_work1">HomeWork1Activity</string>
+</resources>
